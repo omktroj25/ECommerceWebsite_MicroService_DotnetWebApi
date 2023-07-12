@@ -84,7 +84,7 @@ app.UseExceptionHandler(appError =>
                     Error = baseException.Error,
                 })); 
             }
-            // //For handling the internal server globally
+            //For handling the internal server globally
             else
             {
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
