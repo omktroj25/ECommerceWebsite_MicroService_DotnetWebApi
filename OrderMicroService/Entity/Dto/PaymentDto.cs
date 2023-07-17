@@ -32,8 +32,8 @@ namespace Entity.Dto
         /// Gets or Sets PaymentType
         /// </summary>
         [JsonPropertyName("payment_type")]
-        [Required(ErrorMessage = "payment type is required ( payment_type ) ( UPI , CREDIT/CARD , DEBIT/CARD )")]
-        [RegularExpression("(UPI|CREDIT/CARD|DEBIT/CARD)", ErrorMessage = "The input must contain UPI, CREDIT/CARD, or DEBIT/CARD.")]
+        [Required(ErrorMessage = "payment type is required ( payment_type ) ( UPI , CARD )")]
+        [RegularExpression("(UPI|CARD)", ErrorMessage = "The input must contain UPI or CARD.")]
         public string PaymentType { get; set; }="";
 
         /// <summary>

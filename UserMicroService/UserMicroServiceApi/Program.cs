@@ -11,7 +11,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Exception;
 using System.Text;
-
+using UserMicroServiceApi.Controller;
+using Service;
+using Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +50,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"]!))
     };
 });
+
+//Dependency injection
+builder.Services.AddTransient<UserMicroServiceController, UserMicroServiceController>();
+builder.Services.AddTransient<UserMicroService, UserMicroService>();
+builder.Services.AddTransient<UserMicroServiceRepository, UserMicroServiceRepository>();
 
 //Configuration for auto mapper
 builder.Services.AddScoped<MappingProfile>();

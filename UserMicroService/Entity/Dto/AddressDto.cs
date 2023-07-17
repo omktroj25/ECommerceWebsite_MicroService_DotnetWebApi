@@ -55,7 +55,7 @@ namespace Entity.Dto
 
         [JsonPropertyName("zipcode")]
         [RegularExpression(@"^[0-9]{5,}$", ErrorMessage = "Invalid zipcode format, The zipcode must be at least of five digit numbers")]
-        public string Zipcode { get; set; }="";
+        public string ZipCode { get; set; }="";
 
         /// <summary>
         /// Gets or Sets State
